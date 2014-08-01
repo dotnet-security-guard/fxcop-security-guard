@@ -1,0 +1,6 @@
+#Visual Studio binary files
+*.suo
+[Oo]bj/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RuleSet Name="Security Guard Rules" Description=" " ToolsVersion="10.0">
+
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="SG001" Action="Warning" />
+  </Rules>
+  
+</RuleSet>
