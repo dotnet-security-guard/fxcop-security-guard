@@ -26,7 +26,7 @@ namespace SecurityGuard
 
         public override void VisitMethodCall(MethodCall call)
         {
-            MemberBinding callee = (MemberBinding)call.Callee;
+            MemberBinding callee = (MemberBinding) call.Callee;
 
             //Process.Start
             //List of signatures to cover : http://msdn.microsoft.com/en-us/library/vstudio/system.diagnostics.process.start
