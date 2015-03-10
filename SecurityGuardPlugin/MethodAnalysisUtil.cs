@@ -12,32 +12,25 @@ namespace SecurityGuard
 
         public static bool UsesLiteralString(Expression expression)
         {
-            bool result;
+            Console.WriteLine(expression.ToString());
+
             switch (expression.NodeType)
             {
                 case NodeType.Literal:
-                    result = true;
-                    break;
-                case NodeType.Local:
-                    result = false;
-                    break;
+                    return true;
                 case NodeType.Call:
-                    result = false;
                     foreach (Expression operand in ((MethodCall)expression).Operands)
                     {
-                        if (UsesLiteralString(operand))
+                        if (!UsesLiteralString(operand))
                         {
-                            result = true;
-                            break;
+                            return false;
                         }
                     }
-                    break;
+                    return true;
                 default:
-                    result = true;
-                    break;
+                    return false;
             }
 
-            return result;
         }
     }
 }

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C68C2CC9-7722-456F-A845-AD4FC9D28B96}</ProjectGuid>
+    <ProjectGuid>{DEC7A5BA-DC39-4F0A-9BD4-937F96E09EBE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SecurityGuard</RootNamespace>
-    <AssemblyName>SecurityGuard</AssemblyName>
+    <RootNamespace>SecurityGuardTests</RootNamespace>
+    <AssemblyName>SecurityGuardTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,16 +30,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FxCopSdk">
-      <HintPath>$(CodeAnalysisPath)\FxCopSdk.dll</HintPath>
+    <Reference Include="nunit.core">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.1.2\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.Cci">
-      <HintPath>$(CodeAnalysisPath)\Microsoft.Cci.dll</HintPath>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.1.2\lib\nunit.core.interfaces.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.CodeAnalysis" Condition=" '$(TargetFrameworkVersion)' == 'v4.5' ">
-      <HintPath>$(CodeAnalysisPath)\Microsoft.VisualStudio.CodeAnalysis.dll</HintPath>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.1.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.1.2\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.1.2\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -51,18 +58,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandInjectionRule.cs" />
-    <Compile Include="BaseRule.cs" />
-    <Compile Include="MethodAnalysisUtil.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\CommandInjectionRuleTest.cs" />
+    <Compile Include="Tests\WeakRandomGeneratorRuleTest.cs" />
+    <Compile Include="TestUtility\FxCopIssue.cs" />
+    <Compile Include="TestUtility\FxCopTest.cs" />
+    <Compile Include="TestUtility\ResultsVerifier.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Rules.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SecurityGuardRules.ruleset" />
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

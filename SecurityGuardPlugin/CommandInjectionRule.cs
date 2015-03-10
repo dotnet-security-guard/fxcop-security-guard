@@ -8,8 +8,10 @@ namespace SecurityGuard
 {
     public class CommandInjectionRule : BaseRule
     {
-        public CommandInjectionRule() : base("CommandInjection")
+        public CommandInjectionRule()
+            : base("SecurityGuard.CommandInjection")
         {
+            //System.Diagnostics.Debugger.Launch();
         }
 
         public override ProblemCollection Check(Member member)
@@ -30,7 +32,7 @@ namespace SecurityGuard
             //List of signatures to cover : http://msdn.microsoft.com/en-us/library/vstudio/system.diagnostics.process.start
             if (callee.BoundMember.FullName.StartsWith("System.Diagnostics.Process.Start("))
             {
-                if (MethodAnalysisUtil.UsesLiteralString(call.Operands[0]))
+                if (!MethodAnalysisUtil.UsesLiteralString(call.Operands[0]))
                 {
                     this.Problems.Add(new Problem(this.GetResolution(), call));
                 }
