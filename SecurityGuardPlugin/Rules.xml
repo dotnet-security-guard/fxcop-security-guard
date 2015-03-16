@@ -3,7 +3,7 @@
   
   <Rule TypeName="SecurityGuard.CommandInjection" Category="SecurityGuard.Injection" CheckId="SG001">
     <Name>Command Injection</Name>
-    <Description>Identify command injection in Process.Start</Description>
+    <Description>Identify command injection</Description>
     <Url/>
     <Resolution>The command execution is suceptible to injection.</Resolution>
     <MessageLevel Certainty="95">Warning</MessageLevel>
@@ -58,6 +58,17 @@
     <Description>Identify HTTPS communication where the certificate validation is ignored or replace by a custom mecanism.</Description>
     <Url/>
     <Resolution>TODO</Resolution>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>Breaking</FixCategories>
+    <Email />
+    <Owner />
+  </Rule>
+
+  <Rule TypeName="SecurityGuard.XPathInjection" Category="SecurityGuard.Injection" CheckId="SG006">
+    <Name>XPath Injection</Name>
+    <Description>Identify XPath injection</Description>
+    <Url/>
+    <Resolution>The XPath is build from concatenation. It is suceptible to injection.</Resolution>
     <MessageLevel Certainty="95">Warning</MessageLevel>
     <FixCategories>Breaking</FixCategories>
     <Email />

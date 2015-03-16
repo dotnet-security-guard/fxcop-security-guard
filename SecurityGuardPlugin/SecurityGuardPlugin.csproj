@@ -54,6 +54,7 @@
     <Compile Include="Rules\VisitMeRule.cs" />
     <Compile Include="Rules\WeakCertificateValidationRule.cs" />
     <Compile Include="Rules\WeakRandomGeneratorRule.cs" />
+    <Compile Include="Rules\XPathInjectionRule.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Rules.xml" />

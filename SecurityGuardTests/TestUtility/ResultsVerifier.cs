@@ -25,7 +25,7 @@ namespace SecurityGuard.Tests
                         Console.WriteLine("Successful assertion : {0} in {1} (line:{2})", type, file, line);
                         return;
                 }
-                if(issue.file.Equals(file)) {
+                else if(issue.file.Equals(file)) { //For easier troubleshooting all the issues are list.
                     Console.WriteLine("Issue : <{0}> matching the file {1} (line:{2})", issue.ToString(), file, line);
                 }
             }
