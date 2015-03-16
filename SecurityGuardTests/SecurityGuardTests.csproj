@@ -7,7 +7,7 @@
     <ProjectGuid>{DEC7A5BA-DC39-4F0A-9BD4-937F96E09EBE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SecurityGuardTests</RootNamespace>
+    <RootNamespace>SecurityGuard</RootNamespace>
     <AssemblyName>SecurityGuardTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -28,6 +28,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.core">
@@ -59,7 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\ClearTextHttpRuleTest.cs" />
+    <Compile Include="Tests\ClearTextSocketRuleTest.cs" />
     <Compile Include="Tests\CommandInjectionRuleTest.cs" />
+    <Compile Include="Tests\WeakCertificateValidationRuleTest.cs" />
     <Compile Include="Tests\WeakRandomGeneratorRuleTest.cs" />
     <Compile Include="TestUtility\FxCopIssue.cs" />
     <Compile Include="TestUtility\FxCopTest.cs" />

@@ -29,6 +29,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -39,9 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClearTextHttp.cs" />
+    <Compile Include="ClearTextSocket.cs" />
     <Compile Include="ProgramExec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrustAllCertificatePolicy.cs" />
+    <Compile Include="TrustAllRemoteCertificateValidationCallback.cs" />
+    <Compile Include="WeakCertificateValidation.cs" />
     <Compile Include="WeakRandom.cs" />
+    <Compile Include="XPathInjection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

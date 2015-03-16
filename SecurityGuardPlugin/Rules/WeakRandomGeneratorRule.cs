@@ -11,7 +11,7 @@ namespace SecurityGuard
         public WeakRandomGeneratorRule()
             : base("SecurityGuard.WeakRandomGenerator")
         {
-            System.Diagnostics.Debugger.Launch();
+            //System.Diagnostics.Debugger.Launch();
         }
 
         public override ProblemCollection Check(Member member)

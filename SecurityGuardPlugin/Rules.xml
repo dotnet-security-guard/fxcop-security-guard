@@ -31,5 +31,49 @@
     <Owner />
   </Rule>
 
-  
+  <Rule TypeName="SecurityGuard.ClearTextSocket" Category="SecurityGuard.Communication" CheckId="SG003">
+    <Name>Clear Text Communication</Name>
+    <Description>Identify clear text communication</Description>
+    <Url/>
+    <Resolution>TODO</Resolution>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>Breaking</FixCategories>
+    <Email />
+    <Owner />
+  </Rule>
+
+  <Rule TypeName="SecurityGuard.ClearTextHttp" Category="SecurityGuard.Communication" CheckId="SG004">
+    <Name>Clear Text Communication</Name>
+    <Description>Identify clear text communication for HTTP requests</Description>
+    <Url/>
+    <Resolution>TODO</Resolution>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>Breaking</FixCategories>
+    <Email />
+    <Owner />
+  </Rule>
+
+  <Rule TypeName="SecurityGuard.WeakCertificateValidation" Category="SecurityGuard.Communication" CheckId="SG005">
+    <Name>Weak Certificate Validation</Name>
+    <Description>Identify HTTPS communication where the certificate validation is ignored or replace by a custom mecanism.</Description>
+    <Url/>
+    <Resolution>TODO</Resolution>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>Breaking</FixCategories>
+    <Email />
+    <Owner />
+  </Rule>
+
+
+  <Rule TypeName="SecurityGuard.VisitMe" Category="SecurityGuard.Debug" CheckId="SG000">
+    <Name>Tracing Class</Name>
+    <Description>Trace the values sent to the visitor methods..</Description>
+    <Url/>
+    <Resolution></Resolution>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>Breaking</FixCategories>
+    <Email />
+    <Owner />
+  </Rule>
+
 </Rules>

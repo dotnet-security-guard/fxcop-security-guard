@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using Microsoft.FxCop.Sdk;
 
@@ -8,8 +7,7 @@ namespace SecurityGuard
 {
     public class CommandInjectionRule : BaseRule
     {
-        public CommandInjectionRule()
-            : base("SecurityGuard.CommandInjection")
+        public CommandInjectionRule() : base("SecurityGuard.CommandInjection")
         {
             //System.Diagnostics.Debugger.Launch();
         }
@@ -37,12 +35,9 @@ namespace SecurityGuard
                     this.Problems.Add(new Problem(this.GetResolution(), call));
                 }
             }
-
+            
             base.VisitMethodCall(call);
         }
-
-
-
     }
 
 }

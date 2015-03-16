@@ -82,6 +82,13 @@ namespace SecurityGuard.Tests
                 }
                 
             }
+            XmlNodeList allExceptionNodes = doc.DocumentElement.SelectNodes("//Exception");
+            foreach(XmlNode exceptionNode in allExceptionNodes) {
+                String exType = exceptionNode.SelectSingleNode("Type").InnerText;
+                String exMsg = exceptionNode.SelectSingleNode("ExceptionMessage").InnerText;
+                Console.WriteLine(" [!] "+exType+": "+exMsg);
+            }
+            
             return issues;
         }
 

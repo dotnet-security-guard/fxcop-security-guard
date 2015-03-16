@@ -7,7 +7,7 @@
     <ProjectGuid>{1F71CDFB-8F7E-4EC7-8CBB-37A861617E49}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SecurityGuardPlugin</RootNamespace>
+    <RootNamespace>SecurityGuard</RootNamespace>
     <AssemblyName>SecurityGuardPlugin</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -45,14 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseRule.cs" />
-    <Compile Include="CommandInjectionRule.cs" />
-    <Compile Include="MethodAnalysisUtil.cs" />
+    <Compile Include="Rules\BaseRule.cs" />
+    <Compile Include="Rules\ClearTextHttpRule.cs" />
+    <Compile Include="Rules\ClearTextSocketRule.cs" />
+    <Compile Include="Rules\CommandInjectionRule.cs" />
+    <Compile Include="Rules\MethodAnalysisUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WeakRandomGeneratorRule.cs" />
+    <Compile Include="Rules\VisitMeRule.cs" />
+    <Compile Include="Rules\WeakCertificateValidationRule.cs" />
+    <Compile Include="Rules\WeakRandomGeneratorRule.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Rules.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -11,7 +11,7 @@ namespace SecurityGuard
         protected BaseRule(string name)
             : base(
                 name,
-                typeof(BaseRule).Assembly.GetName().Name + ".Rules",
+                "SecurityGuard.Rules",
                 typeof(BaseRule).Assembly)
         {
         }
