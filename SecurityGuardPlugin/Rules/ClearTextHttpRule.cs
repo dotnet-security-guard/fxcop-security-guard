@@ -51,7 +51,7 @@ namespace SecurityGuard.Rules
 
         private void validateOperand(Expression expression) {
             String uri = MethodAnalysisUtil.GetStringValue(expression);
-            if (uri.StartsWith("http://"))
+            if (uri != null && uri.StartsWith("http://"))
             {
                 this.Problems.Add(new Problem(this.GetResolution(), expression));
             }
