@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
 
@@ -13,8 +14,8 @@ namespace SecurityGuard.Tests
 {
     public class FxCopTest
     {
-        private const string FXCOP_HOME = "C:/Program Files/Microsoft Visual Studio 12.0/Team Tools/Static Analysis Tools/FxCop/";
-        private const string SEC_GUARD_HOME = "C:/Code/fxcop-security-guard/";
+        private string[] FXCOP_HOME = {"C:/Program Files/Microsoft Visual Studio 12.0/Team Tools/Static Analysis Tools/FxCop/",
+                                      "C:/Program Files (x86)/Microsoft Visual Studio 12.0/Team Tools/Static Analysis Tools/FxCop/"};
         private const bool DISPLAY_FXCOP_OUT = false;
 
         private Task[] taskWait = { };
@@ -28,24 +29,39 @@ namespace SecurityGuard.Tests
 
         public List<FxCopIssue> runScan() {
 
-            string targetBinary = SEC_GUARD_HOME + getDllPath("SecurityGuardSamples");
-            string ruleFile = SEC_GUARD_HOME + getDllPath("SecurityGuardPlugin");
+
+            //Guessing some directory
+            string fxCopHome = findHomeDirectory();
+            string secGuardHome = findSecGuardHomeDirectory();
+
+
+            string targetBinary = secGuardHome + getDllPath("SecurityGuardSamples");
+            string ruleFile = secGuardHome + getDllPath("SecurityGuardPlugin");
             string tempReportFile = System.IO.Path.GetTempPath() + "find-sec-guard" + Guid.NewGuid().ToString() + ".xml";
 
+            Console.WriteLine("== Configuration ==");
+            Console.WriteLine("FxCop home directory \t: " + fxCopHome);
+            Console.WriteLine("Security Guard directory \t: " + secGuardHome);
+            Console.WriteLine("Target DLL (Samples) \t: " + targetBinary);
+            Console.WriteLine("Plugin DLL \t: " + ruleFile);
+            Console.WriteLine("Report output file \t: " + tempReportFile);
+            Console.WriteLine("=============");
 
             Process process = new Process()
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = FXCOP_HOME + "FxCopCmd.exe",
-                    Arguments = String.Format("/f:{0} /r:{1} /out:\"{2}\"", targetBinary, ruleFile, tempReportFile),
+
+                    FileName = fxCopHome + "FxCopCmd.exe",
+                    Arguments = String.Format("/f:\"{0}\" /r:\"{1}\" /out:\"{2}\"", targetBinary, ruleFile, tempReportFile),
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
                     CreateNoWindow = true,
                     WindowStyle = ProcessWindowStyle.Normal
                 }
             };
-            Console.WriteLine("Executing : " + "FxCopCmd.exe " + process.StartInfo.Arguments);
+
+            Console.WriteLine("Executing : FxCopCmd.exe " + process.StartInfo.Arguments);
             process.Start();
 
             if (DISPLAY_FXCOP_OUT)
@@ -90,6 +106,30 @@ namespace SecurityGuard.Tests
             }
             
             return issues;
+        }
+
+
+        private string findHomeDirectory()
+        {
+            foreach(string path in FXCOP_HOME) {
+                if (File.Exists(path + "FxCopCmd.exe")) {
+                    return path;
+                }
+            }
+
+            throw new System.Exception("Unable to find the FxCop home directory");
+        }
+
+
+        private string findSecGuardHomeDirectory()
+        {
+            MatchCollection matches = new Regex("(.*)SecurityGuardTests").Matches(Directory.GetCurrentDirectory());
+            if (matches.Count > 0)
+            {
+                return matches[0].Groups[1].Value;
+            }
+
+            throw new System.Exception("Unable to find the root of the project.");
         }
 
 

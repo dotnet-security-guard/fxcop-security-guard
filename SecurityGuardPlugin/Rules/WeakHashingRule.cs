@@ -12,7 +12,7 @@ namespace SecurityGuard.Rules
         public WeakHashingRule()
             : base("SecurityGuard.WeakHashing")
         {
-            System.Diagnostics.Debugger.Launch();
+            //System.Diagnostics.Debugger.Launch();
         }
 
         public override ProblemCollection Check(Member member)
