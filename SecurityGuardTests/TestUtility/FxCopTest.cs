@@ -13,7 +13,7 @@ namespace SecurityGuard.Tests
 {
     public class FxCopTest
     {
-        private const string FXCOP_HOME = "C:/Program Files (x86)/Microsoft Visual Studio 12.0/Team Tools/Static Analysis Tools/FxCop/";
+        private const string FXCOP_HOME = "C:/Program Files/Microsoft Visual Studio 12.0/Team Tools/Static Analysis Tools/FxCop/";
         private const string SEC_GUARD_HOME = "C:/Code/fxcop-security-guard/";
         private const bool DISPLAY_FXCOP_OUT = false;
 
@@ -38,7 +38,7 @@ namespace SecurityGuard.Tests
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = FXCOP_HOME + "FxCopCmd.exe",
-                    Arguments = String.Format("/f:{0} /r:{1} /out:{2}", targetBinary, ruleFile, tempReportFile),
+                    Arguments = String.Format("/f:{0} /r:{1} /out:\"{2}\"", targetBinary, ruleFile, tempReportFile),
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
                     CreateNoWindow = true,
