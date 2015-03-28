@@ -50,6 +50,7 @@
     <Compile Include="TrustAllCertificatePolicy.cs" />
     <Compile Include="TrustAllRemoteCertificateValidationCallback.cs" />
     <Compile Include="WeakCertificateValidation.cs" />
+    <Compile Include="WeakHashing.cs" />
     <Compile Include="WeakRandom.cs" />
     <Compile Include="XPathInjection.cs" />
   </ItemGroup>

@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FxCopSdk">
-      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\FxCopSdk.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\FxCopSdk.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Cci">
-      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\Microsoft.Cci.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\Microsoft.Cci.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rules\VisitMeRule.cs" />
     <Compile Include="Rules\WeakCertificateValidationRule.cs" />
+    <Compile Include="Rules\WeakHashingRule.cs" />
     <Compile Include="Rules\WeakRandomGeneratorRule.cs" />
     <Compile Include="Rules\XPathInjectionRule.cs" />
   </ItemGroup>

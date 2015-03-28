@@ -66,6 +66,7 @@
     <Compile Include="Tests\ClearTextSocketRuleTest.cs" />
     <Compile Include="Tests\CommandInjectionRuleTest.cs" />
     <Compile Include="Tests\WeakCertificateValidationRuleTest.cs" />
+    <Compile Include="Tests\WeakHashingTest.cs" />
     <Compile Include="Tests\WeakRandomGeneratorRuleTest.cs" />
     <Compile Include="Tests\XPathInjectionRuleTest.cs" />
     <Compile Include="TestUtility\FxCopIssue.cs" />

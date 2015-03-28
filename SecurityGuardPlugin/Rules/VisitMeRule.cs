@@ -10,7 +10,7 @@ namespace SecurityGuard
 {
     
     //Uncomment the class to output the complete trace of the code scan.
-    /*
+    
     public class VisitMeRule : BaseRule
     {
         static StreamWriter outfile;

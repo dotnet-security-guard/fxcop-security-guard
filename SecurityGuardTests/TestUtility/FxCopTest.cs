@@ -29,6 +29,7 @@ namespace SecurityGuard.Tests
 
         public List<FxCopIssue> runScan() {
 
+
             //Guessing some directory
             string fxCopHome = findHomeDirectory();
             string secGuardHome = findSecGuardHomeDirectory();
@@ -50,6 +51,7 @@ namespace SecurityGuard.Tests
             {
                 StartInfo = new ProcessStartInfo
                 {
+
                     FileName = fxCopHome + "FxCopCmd.exe",
                     Arguments = String.Format("/f:\"{0}\" /r:\"{1}\" /out:\"{2}\"", targetBinary, ruleFile, tempReportFile),
                     UseShellExecute = false,
@@ -58,6 +60,7 @@ namespace SecurityGuard.Tests
                     WindowStyle = ProcessWindowStyle.Normal
                 }
             };
+
             Console.WriteLine("Executing : FxCopCmd.exe " + process.StartInfo.Arguments);
             process.Start();
 
