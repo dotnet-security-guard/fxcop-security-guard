@@ -75,7 +75,7 @@
     <Owner />
   </Rule>
 
-  <Rule TypeName="SecurityGuard.WeakHashing" Category="SecurityGuard.WeakHashing" CheckId="SG007">
+  <Rule TypeName="SecurityGuard.WeakHashing" Category="SecurityGuard.Crypto" CheckId="SG007">
     <Name>Weak Hashing</Name>
     <Description>Identify weak hashing algorithms</Description>
     <Url/>
@@ -86,6 +86,27 @@
     <Owner />
   </Rule>
 
+  <Rule TypeName="SecurityGuard.StaticIV" Category="SecurityGuard.Crypto" CheckId="SG008">
+    <Name>Static IV</Name>
+    <Description>Identify generation of static IV</Description>
+    <Url/>
+    <Resolution>TODO</Resolution>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>Breaking</FixCategories>
+    <Email />
+    <Owner />
+  </Rule>
+
+  <Rule TypeName="SecurityGuard.WeakCipherAlgorithm" Category="SecurityGuard.Crypto" CheckId="SG009">
+    <Name>Weak Cipher Algorithm</Name>
+    <Description>Identify weak cipher algorithms</Description>
+    <Url/>
+    <Resolution>TODO</Resolution>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>Breaking</FixCategories>
+    <Email />
+    <Owner />
+  </Rule>
 
   <Rule TypeName="SecurityGuard.VisitMe" Category="SecurityGuard.Debug" CheckId="SG000">
     <Name>Tracing Class</Name>
