@@ -86,7 +86,16 @@
     <Owner />
   </Rule>
 
-
+  <Rule TypeName="SecurityGuard.WeakCipherMode" Category="SecurityGuard.Crypto" CheckId="SG008">
+    <Name>Weak Cipher Mode</Name>
+    <Description>Identify weak cipher mode (ECB mode)</Description>
+    <Url/>
+    <Resolution>TODO</Resolution>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>Breaking</FixCategories>
+    <Email />
+    <Owner />
+  </Rule>
 
   <Rule TypeName="SecurityGuard.WeakCipherAlgorithm" Category="SecurityGuard.Crypto" CheckId="SG009">
     <Name>Weak Cipher Algorithm</Name>
