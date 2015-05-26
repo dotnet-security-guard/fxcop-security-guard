@@ -62,16 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\ClearTextHttpRuleTest.cs" />
-    <Compile Include="Tests\ClearTextSocketRuleTest.cs" />
-    <Compile Include="Tests\CommandInjectionRuleTest.cs" />
-    <Compile Include="Tests\WeakCertificateValidationRuleTest.cs" />
-    <Compile Include="Tests\WeakHashingTest.cs" />
-    <Compile Include="Tests\WeakRandomGeneratorRuleTest.cs" />
-    <Compile Include="Tests\XPathInjectionRuleTest.cs" />
-    <Compile Include="TestUtility\FxCopIssue.cs" />
-    <Compile Include="TestUtility\FxCopTest.cs" />
-    <Compile Include="TestUtility\ResultsVerifier.cs" />
+    <Compile Include="Tests\*" />
+    <Compile Include="TestUtility\*" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
