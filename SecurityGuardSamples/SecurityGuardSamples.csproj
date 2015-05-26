@@ -43,16 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClearTextHttp.cs" />
-    <Compile Include="ClearTextSocket.cs" />
-    <Compile Include="ProgramExec.cs" />
+    <Compile Include="Samples\*" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrustAllCertificatePolicy.cs" />
-    <Compile Include="TrustAllRemoteCertificateValidationCallback.cs" />
-    <Compile Include="WeakCertificateValidation.cs" />
-    <Compile Include="WeakHashing.cs" />
-    <Compile Include="WeakRandom.cs" />
-    <Compile Include="XPathInjection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
