@@ -108,6 +108,17 @@
     <Owner />
   </Rule>
 
+  <Rule TypeName="SecurityGuard.WeakKeySize" Category="SecurityGuard.Crypto" CheckId="SG010">
+    <Name>Weak Key Size</Name>
+    <Description>Identify weak key size</Description>
+    <Url/>
+    <Resolution>TODO</Resolution>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>Breaking</FixCategories>
+    <Email />
+    <Owner />
+  </Rule>
+
   <Rule TypeName="SecurityGuard.VisitMe" Category="SecurityGuard.Debug" CheckId="SG000">
     <Name>Tracing Class</Name>
     <Description>Trace the values sent to the visitor methods..</Description>
