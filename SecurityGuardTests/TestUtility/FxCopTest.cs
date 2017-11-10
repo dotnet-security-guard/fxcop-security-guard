@@ -15,7 +15,8 @@ namespace SecurityGuard.Tests
     public class FxCopTest
     {
         private string[] FXCOP_HOME = {"C:/Program Files/Microsoft Visual Studio 12.0/Team Tools/Static Analysis Tools/FxCop/",
-                                      "C:/Program Files (x86)/Microsoft Visual Studio 12.0/Team Tools/Static Analysis Tools/FxCop/"};
+                                       "C:/Program Files (x86)/Microsoft Visual Studio 12.0/Team Tools/Static Analysis Tools/FxCop/",
+                                       "C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/Team Tools/Static Analysis Tools/FxCop/"};
         private const bool DISPLAY_FXCOP_OUT = false;
 
         private Task[] taskWait = { };
